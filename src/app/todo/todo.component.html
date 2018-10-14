@@ -1,0 +1,12 @@
+<h1> Add A todo </h1>
+<div>
+  <label for="todo"> Todo </label>
+  <input type="text" #todoDesc>
+  <button (click)="addTodo(todoDesc.value)"> Add Todo </button>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let todo of todos"> {{todo}} </li>
+  </ul>
+</div>
