@@ -1,0 +1,18 @@
+<h1> Persons Bloc </h1>
+
+<div class="persons-container">
+  <form>
+    <label for="fname">First Name: </label>
+    <input type="text" [(ngModel)]="fname" name="fname">
+    <label for="lname">Last Name: </label>
+    <input type="text" [(ngModel)]="lname" name="lname">
+    <label for="username">Username: </label>
+    <input type="text" [(ngModel)]="username" name="username">
+    <button (click)="addUser(fname, lname, username)"> Submit </button>
+  </form>
+  <div *ngFor="let user of users">
+    <h1>{{user.fname +' ' + user.lname}} </h1>
+    <h2> {{user.username}} </h2>
+    <span (click)="deleteUser(user)"> Delete </span>
+  </div>
+</div>

@@ -1,12 +1,14 @@
-<h1> Add A todo </h1>
-<div>
-  <label for="todo"> Todo </label>
-  <input type="text" #todoDesc>
-  <button (click)="addTodo(todoDesc.value)"> Add Todo </button>
-</div>
+<div class="main-container">
+  <h1> Add A todo </h1>
+  <div class="input-section">
+    <label for="todo"> Todo </label>
+    <input type="text" #todoDesc>
+    <button (click)="addTodo(todoDesc.value)"> Add Todo </button>
+  </div>
 
-<div>
-  <ul>
-    <li *ngFor="let todo of todos"> {{todo}} </li>
-  </ul>
+  <div>
+    <ul>
+      <li *ngFor="let todo of todos"> {{todo}} <button (click)="deleteTodo(todo)"> X </button> </li>
+    </ul>
+  </div>
 </div>
