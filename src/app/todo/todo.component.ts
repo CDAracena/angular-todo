@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   todos:string[];
+
   constructor() { }
 
   ngOnInit() {
     this.todos = [];
+
 
 
   }
@@ -19,5 +21,11 @@ export class TodoComponent implements OnInit {
       console.log(this.todos)
 
   }
-
+  deleteTodo(todo){
+    for (let i = 0; i < this.todos.length;i++){
+      if (this.todos[i] === todo){
+        this.todos.splice(i, 1);
+      }
+    }
+  }
 }
